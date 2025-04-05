@@ -1,9 +1,24 @@
 using System;
 
-class Program
+public class Entry
 {
-    static void Main(string[] args)
+    public string Prompt { get; set; }
+    public string Response { get; set; }
+    public string Date { get; set; }
+
+    // Constructor to initialize an entry
+    public Entry(string prompt, string response)
     {
-        Console.WriteLine("Hello World! This is the Resumes Project.");
+        Prompt = prompt;
+        Response = response;
+        Date = DateTime.Now.ToString("yyyy-MM-dd"); // Store the current date
+    }
+
+    // Method to display the entry details
+    public void DisplayEntry()
+    {
+        Console.WriteLine($"Date: {Date}");
+        Console.WriteLine($"Prompt: {Prompt}");
+        Console.WriteLine($"Response: {Response}\n");
     }
 }
